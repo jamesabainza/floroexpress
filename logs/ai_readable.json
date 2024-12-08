@@ -1,0 +1,479 @@
+{
+  "format_version": "1.0",
+  "app_name": "user-app",
+  "logs": [
+    {
+      "log_id": "d1945ad60930ccbe88f397984753ae9d",
+      "timestamp": "2024-12-06T15:54:34.378Z",
+      "timestamp_epoch": 1733500474382,
+      "level": "INFO",
+      "message": "Application started",
+      "error_data": null,
+      "context": {
+        "componentType": "System",
+        "operationCategory": "Startup",
+        "performanceMetrics": {
+          "startupTime": 1200,
+          "memoryUsage": {
+            "rss": 36962304,
+            "heapTotal": 4816896,
+            "heapUsed": 4031072,
+            "external": 363824,
+            "arrayBuffers": 22411
+          }
+        },
+        "environment": "development",
+        "platform": "darwin",
+        "node_version": "v18.20.4",
+        "memory_usage": {
+          "rss": 37715968,
+          "heapTotal": 5341184,
+          "heapUsed": 4771616,
+          "external": 548755,
+          "arrayBuffers": 28571
+        },
+        "component_hierarchy": [],
+        "user_session": null,
+        "user_id": null,
+        "action_sequence": [],
+        "previous_state": null,
+        "current_state": null,
+        "data_flow": [],
+        "performance_metrics": {
+          "startupTime": 1200,
+          "memoryUsage": {
+            "rss": 36962304,
+            "heapTotal": 4816896,
+            "heapUsed": 4031072,
+            "external": 363824,
+            "arrayBuffers": 22411
+          }
+        }
+      },
+      "categorization": {
+        "error_type": null,
+        "component_type": "System",
+        "operation_category": "Startup",
+        "severity": "low",
+        "impact_scope": "local"
+      },
+      "analysis_hints": {
+        "requires_immediate_attention": false,
+        "potential_root_causes": [],
+        "related_components": [],
+        "suggested_actions": [],
+        "error_pattern": null
+      }
+    },
+    {
+      "log_id": "69479fc4eec9e17304d8826511b83767",
+      "timestamp": "2024-12-06T15:54:34.384Z",
+      "timestamp_epoch": 1733500474384,
+      "level": "WARN",
+      "message": "High memory usage detected",
+      "error_data": null,
+      "context": {
+        "componentType": "SystemMonitor",
+        "operationCategory": "ResourceMonitoring",
+        "performanceMetrics": {
+          "memoryUsage": {
+            "rss": 38027264,
+            "heapTotal": 5341184,
+            "heapUsed": 4807688,
+            "external": 549824,
+            "arrayBuffers": 29640
+          },
+          "threshold": "80%"
+        },
+        "potentialCauses": [
+          "Memory leak",
+          "Too many concurrent operations"
+        ],
+        "environment": "development",
+        "platform": "darwin",
+        "node_version": "v18.20.4",
+        "memory_usage": {
+          "rss": 38027264,
+          "heapTotal": 5341184,
+          "heapUsed": 4809608,
+          "external": 549840,
+          "arrayBuffers": 29656
+        },
+        "component_hierarchy": [],
+        "user_session": null,
+        "user_id": null,
+        "action_sequence": [],
+        "previous_state": null,
+        "current_state": null,
+        "data_flow": [],
+        "performance_metrics": {
+          "memoryUsage": {
+            "rss": 38027264,
+            "heapTotal": 5341184,
+            "heapUsed": 4807688,
+            "external": 549824,
+            "arrayBuffers": 29640
+          },
+          "threshold": "80%"
+        }
+      },
+      "categorization": {
+        "error_type": null,
+        "component_type": "SystemMonitor",
+        "operation_category": "ResourceMonitoring",
+        "severity": "medium",
+        "impact_scope": "local"
+      },
+      "analysis_hints": {
+        "requires_immediate_attention": false,
+        "potential_root_causes": [
+          "Memory leak",
+          "Too many concurrent operations"
+        ],
+        "related_components": [],
+        "suggested_actions": [],
+        "error_pattern": null
+      }
+    },
+    {
+      "log_id": "aab06375590492ecc0787277df940bb1",
+      "timestamp": "2024-12-06T15:54:34.384Z",
+      "timestamp_epoch": 1733500474384,
+      "level": "ERROR",
+      "message": "Failed to authenticate user",
+      "error_data": {
+        "name": "NetworkError",
+        "message": "API endpoint /users/authenticate not responding",
+        "stack": "NetworkError: API endpoint /users/authenticate not responding\n    at testLogging (/Users/patrickabainza/eroscurio_sdk/v4.2/apps/user-app/user-app/src/utils/TestLogger.js:28:19)",
+        "type": "Error",
+        "additional_info": {
+          "endpoint": "/users/authenticate",
+          "responseTime": 5000,
+          "httpStatus": 503
+        }
+      },
+      "context": {
+        "componentType": "APIClient",
+        "operationCategory": "Authentication",
+        "userId": "user123",
+        "sessionId": "sess_abc123",
+        "actionSequence": [
+          "FORM_SUBMIT",
+          "API_CALL",
+          "TIMEOUT"
+        ],
+        "previousState": {
+          "isLoading": true,
+          "user": null
+        },
+        "currentState": {
+          "isLoading": false,
+          "error": "Network timeout"
+        },
+        "impactScope": "user",
+        "potentialCauses": [
+          "Server down",
+          "Network issues",
+          "Rate limiting"
+        ],
+        "suggestedActions": [
+          "Retry with exponential backoff",
+          "Check server status"
+        ],
+        "environment": "development",
+        "platform": "darwin",
+        "node_version": "v18.20.4",
+        "memory_usage": {
+          "rss": 38158336,
+          "heapTotal": 5341184,
+          "heapUsed": 4859952,
+          "external": 552737,
+          "arrayBuffers": 32553
+        },
+        "component_hierarchy": [],
+        "user_session": "sess_abc123",
+        "user_id": "user123",
+        "action_sequence": [
+          "FORM_SUBMIT",
+          "API_CALL",
+          "TIMEOUT"
+        ],
+        "previous_state": {
+          "isLoading": true,
+          "user": null
+        },
+        "current_state": {
+          "isLoading": false,
+          "error": "Network timeout"
+        },
+        "data_flow": [],
+        "performance_metrics": null
+      },
+      "categorization": {
+        "error_type": "NetworkError",
+        "component_type": "APIClient",
+        "operation_category": "Authentication",
+        "severity": "high",
+        "impact_scope": "user"
+      },
+      "analysis_hints": {
+        "requires_immediate_attention": true,
+        "potential_root_causes": [
+          "Server down",
+          "Network issues",
+          "Rate limiting"
+        ],
+        "related_components": [],
+        "suggested_actions": [
+          "Retry with exponential backoff",
+          "Check server status"
+        ],
+        "error_pattern": {
+          "pattern_signature": "{\"errorType\":\"NetworkError\",\"componentType\":\"APIClient\",\"stackTrace\":\"NetworkError: API endpoint /users/authenticate not responding\\n    at testLogging (***)\"}",
+          "pattern_category": "network_error",
+          "frequency": "to_be_calculated",
+          "known_solutions": []
+        }
+      }
+    },
+    {
+      "log_id": "feb4d5829a279cbd63fe8ce6fefc3f67",
+      "timestamp": "2024-12-06T15:54:34.386Z",
+      "timestamp_epoch": 1733500474386,
+      "level": "ERROR",
+      "message": "Form validation failed",
+      "error_data": {
+        "name": "ValidationError",
+        "message": "Invalid email format",
+        "stack": "ValidationError: Invalid email format\n    at testLogging (/Users/patrickabainza/eroscurio_sdk/v4.2/apps/user-app/user-app/src/utils/TestLogger.js:52:19)",
+        "type": "Error",
+        "additional_info": {
+          "field": "email",
+          "value": "invalid@email",
+          "constraints": [
+            "email",
+            "required"
+          ]
+        }
+      },
+      "context": {
+        "componentType": "LoginForm",
+        "operationCategory": "UserInput",
+        "componentStack": [
+          "App",
+          "Login",
+          "LoginForm",
+          "EmailInput"
+        ],
+        "dataFlow": [
+          "UserInput",
+          "Validation",
+          "Error"
+        ],
+        "potentialCauses": [
+          "User input error",
+          "Client-side validation"
+        ],
+        "suggestedActions": [
+          "Show error message",
+          "Highlight field"
+        ],
+        "environment": "development",
+        "platform": "darwin",
+        "node_version": "v18.20.4",
+        "memory_usage": {
+          "rss": 38879232,
+          "heapTotal": 6389760,
+          "heapUsed": 4512144,
+          "external": 544818,
+          "arrayBuffers": 24634
+        },
+        "component_hierarchy": [
+          "App",
+          "Login",
+          "LoginForm",
+          "EmailInput"
+        ],
+        "user_session": null,
+        "user_id": null,
+        "action_sequence": [],
+        "previous_state": null,
+        "current_state": null,
+        "data_flow": [
+          "UserInput",
+          "Validation",
+          "Error"
+        ],
+        "performance_metrics": null
+      },
+      "categorization": {
+        "error_type": "ValidationError",
+        "component_type": "LoginForm",
+        "operation_category": "UserInput",
+        "severity": "high",
+        "impact_scope": "local"
+      },
+      "analysis_hints": {
+        "requires_immediate_attention": true,
+        "potential_root_causes": [
+          "User input error",
+          "Client-side validation"
+        ],
+        "related_components": [],
+        "suggested_actions": [
+          "Show error message",
+          "Highlight field"
+        ],
+        "error_pattern": {
+          "pattern_signature": "{\"errorType\":\"ValidationError\",\"componentType\":\"LoginForm\",\"stackTrace\":\"ValidationError: Invalid email format\\n    at testLogging (***)\"}",
+          "pattern_category": "validation_error",
+          "frequency": "to_be_calculated",
+          "known_solutions": []
+        }
+      }
+    },
+    {
+      "log_id": "458a30132977f7ba63f00a4833097798",
+      "timestamp": "2024-12-06T15:54:34.386Z",
+      "timestamp_epoch": 1733500474386,
+      "level": "DEBUG",
+      "message": "Render performance metrics",
+      "error_data": null,
+      "context": {
+        "componentType": "PerformanceMonitor",
+        "operationCategory": "Monitoring",
+        "performanceMetrics": {
+          "renderTime": 50,
+          "componentCount": 15,
+          "rerenderedComponents": [
+            "UserList",
+            "SearchBar"
+          ]
+        },
+        "environment": "development",
+        "platform": "darwin",
+        "node_version": "v18.20.4",
+        "memory_usage": {
+          "rss": 38993920,
+          "heapTotal": 6389760,
+          "heapUsed": 4605632,
+          "external": 562860,
+          "arrayBuffers": 42676
+        },
+        "component_hierarchy": [],
+        "user_session": null,
+        "user_id": null,
+        "action_sequence": [],
+        "previous_state": null,
+        "current_state": null,
+        "data_flow": [],
+        "performance_metrics": {
+          "renderTime": 50,
+          "componentCount": 15,
+          "rerenderedComponents": [
+            "UserList",
+            "SearchBar"
+          ]
+        }
+      },
+      "categorization": {
+        "error_type": null,
+        "component_type": "PerformanceMonitor",
+        "operation_category": "Monitoring",
+        "severity": "low",
+        "impact_scope": "local"
+      },
+      "analysis_hints": {
+        "requires_immediate_attention": false,
+        "potential_root_causes": [],
+        "related_components": [],
+        "suggested_actions": [],
+        "error_pattern": null
+      }
+    },
+    {
+      "log_id": "7fa1aabd2dff3ba9ad7856348ac0f81e",
+      "timestamp": "2024-12-06T15:54:34.387Z",
+      "timestamp_epoch": 1733500474387,
+      "level": "ERROR",
+      "message": "Login failed",
+      "error_data": {
+        "name": "AuthenticationError",
+        "message": "Invalid credentials",
+        "stack": "AuthenticationError: Invalid credentials\n    at testLogging (/Users/patrickabainza/eroscurio_sdk/v4.2/apps/user-app/user-app/src/utils/TestLogger.js:83:19)",
+        "type": "Error",
+        "additional_info": {
+          "attempts": 3,
+          "lockoutStatus": "warning"
+        }
+      },
+      "context": {
+        "componentType": "AuthService",
+        "operationCategory": "Authentication",
+        "userId": "user456",
+        "sessionId": "sess_def456",
+        "actionSequence": [
+          "LOGIN_ATTEMPT",
+          "CREDENTIALS_CHECK",
+          "FAILURE"
+        ],
+        "impactScope": "user",
+        "potentialCauses": [
+          "Wrong password",
+          "Account locked"
+        ],
+        "suggestedActions": [
+          "Reset password",
+          "Contact support"
+        ],
+        "environment": "development",
+        "platform": "darwin",
+        "node_version": "v18.20.4",
+        "memory_usage": {
+          "rss": 39092224,
+          "heapTotal": 6389760,
+          "heapUsed": 4709104,
+          "external": 585440,
+          "arrayBuffers": 65256
+        },
+        "component_hierarchy": [],
+        "user_session": "sess_def456",
+        "user_id": "user456",
+        "action_sequence": [
+          "LOGIN_ATTEMPT",
+          "CREDENTIALS_CHECK",
+          "FAILURE"
+        ],
+        "previous_state": null,
+        "current_state": null,
+        "data_flow": [],
+        "performance_metrics": null
+      },
+      "categorization": {
+        "error_type": "AuthenticationError",
+        "component_type": "AuthService",
+        "operation_category": "Authentication",
+        "severity": "high",
+        "impact_scope": "user"
+      },
+      "analysis_hints": {
+        "requires_immediate_attention": true,
+        "potential_root_causes": [
+          "Wrong password",
+          "Account locked"
+        ],
+        "related_components": [],
+        "suggested_actions": [
+          "Reset password",
+          "Contact support"
+        ],
+        "error_pattern": {
+          "pattern_signature": "{\"errorType\":\"AuthenticationError\",\"componentType\":\"AuthService\",\"stackTrace\":\"AuthenticationError: Invalid credentials\\n    at testLogging (***)\"}",
+          "pattern_category": "authentication_error",
+          "frequency": "to_be_calculated",
+          "known_solutions": []
+        }
+      }
+    }
+  ]
+}
